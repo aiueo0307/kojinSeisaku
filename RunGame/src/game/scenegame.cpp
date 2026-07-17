@@ -3,6 +3,9 @@
 #include"score.h"
 #include"player.h"
 #include"../lib/fade.h"
+#include"stage.h"
+#include"hitcheck.h"
+
 #define END_WAIT (60)
 
 extern PLAYER_DATA g_player;
@@ -47,6 +50,7 @@ int TickGame()
 		g_bg.Init();
 		IniPlayer();
 		g_score.Init();
+		InitStage();
 		g_gameScene.m_state = GAMESCENE_LOAD;
 			break;
 	
@@ -54,6 +58,7 @@ int TickGame()
 		g_bg.Load();
 		LoadPlayer();
 		g_score.Load();
+		LoadStage();
 		g_gameScene.m_state = GAMESCENE_STARTWAIT;
 			break;
 
@@ -67,6 +72,16 @@ int TickGame()
 		g_bg.Tick();
 		TickPlayer();
 		g_score.Tick();
+
+
+		HitCheckPlayerToStage();
+
+		if (g_player.m_pos.y >= 1280)
+		{
+			g_gameScene.m_endWaitCount = 60;
+			g_gameScene.m_state = GAMESCENE_ENDWAIT;
+		}
+
 		/*{
 			g_gameScene.m_endWaitCount = 60;
 			g_gameScene.m_state = GAMESCENE_ENDWAIT;
@@ -89,6 +104,7 @@ int TickGame()
 		g_bg.Exit();
 		ExitPlayer();
 		g_score.Exit();
+		ExitStage();
 		g_gameScene.m_state = GAMESCENE_INIT;
 		
 			return 1;
@@ -111,6 +127,7 @@ void DrawGame()
 			g_bg.Draw();
 			DrawPlayer();
 			g_score.Draw();
+			DrawStage();
 			break;
 	}
 }

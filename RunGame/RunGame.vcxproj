@@ -22,6 +22,8 @@
     <ClInclude Include="src\game\background.h" />
     <ClInclude Include="src\game\common.h" />
     <ClInclude Include="src\game\effect.h" />
+    <ClInclude Include="src\game\enemy.h" />
+    <ClInclude Include="src\game\enemy2.h" />
     <ClInclude Include="src\game\enemyshot.h" />
     <ClInclude Include="src\game\goal.h" />
     <ClInclude Include="src\game\hitcheck.h" />
@@ -46,6 +48,8 @@
   <ItemGroup>
     <ClCompile Include="src\game\background.cpp" />
     <ClCompile Include="src\game\effect.cpp" />
+    <ClCompile Include="src\game\enemy.cpp" />
+    <ClCompile Include="src\game\enemy2.cpp" />
     <ClCompile Include="src\game\enemyshot.cpp" />
     <ClCompile Include="src\game\goal.cpp" />
     <ClCompile Include="src\game\hitcheck.cpp" />

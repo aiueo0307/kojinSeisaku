@@ -90,6 +90,12 @@
     <ClInclude Include="src\lib\input.h">
       <Filter>ソース ファイル\lib</Filter>
     </ClInclude>
+    <ClInclude Include="src\game\enemy.h">
+      <Filter>ソース ファイル\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\enemy2.h">
+      <Filter>ソース ファイル\game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\game\score.cpp">
@@ -157,6 +163,12 @@
     </ClCompile>
     <ClCompile Include="src\lib\input.cpp">
       <Filter>ソース ファイル\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\enemy.cpp">
+      <Filter>ソース ファイル\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\enemy2.cpp">
+      <Filter>ソース ファイル\game</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

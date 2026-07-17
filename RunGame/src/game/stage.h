@@ -24,7 +24,11 @@ typedef struct {
 	int m_state;
 }STAGE_DATA;
 
+enum tagStageID {
+	STAGEID_BLOCK,		// è∞ÅEï«
 
+	STAGEID_NUM
+};
 
 void InitStage();
 void LoadStage();

@@ -7,16 +7,7 @@
 #define BACKGROUND_SIZE_Y (480.0f) //画像縦幅
 #define MOVE_SPEED (8.0)
 //＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-
-////背景データを表示するための構造体
-//typedef struct {
-//	int m_hndl;   //画像ハンドル
-//	VECTOR m_pos;  //画像の位置表示
-//}BG_DATA;
-
-//上記構造体を実際の変数で
-//static BG_DATA g_bg;
-
+// 
 //背景データの初期化
 void CBackGround::Init()
 {
@@ -37,9 +28,7 @@ void CBackGround::Load()
 void CBackGround::Tick()
 {	
 	if (m_pos.x >= (BACKGROUND_SIZE_X * 0.5f) + BACKGROUND_SIZE_X)
-	
-	m_pos.x -= BACKGROUND_SIZE_X;
-
+	m_pos.x += BACKGROUND_SIZE_X;
 }
 ///背景表示関数
 void CBackGround::Draw()
@@ -48,9 +37,8 @@ void CBackGround::Draw()
 //第一引数：X座標、２：Y座標、３：拡大縮小率、４：回転角度（ラジアン角）
 	//５：画像ハンドル、６：透過処理を有効にするか
 	
-
-			DrawRotaGraph((int)m_pos.x-GetWorldOffsetX(), (int)m_pos.y-GetWorldOffsetY(), 1.0, 0.0, m_hndl, TRUE);
-
+	//DrawRotaGraph((int)m_pos.x-GetWorldOffsetX(), (int)m_pos.y-GetWorldOffsetY(), 1.0, 0.0, m_hndl, TRUE);
+DrawRotaGraph((int)m_pos.x+ BACKGROUND_SIZE_X - GetWorldOffsetX(), (int)m_pos.y - GetWorldOffsetY(), 1.0, 0.0, m_hndl, TRUE);
 	
 }
 

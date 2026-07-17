@@ -9,6 +9,7 @@
 #define Player_SIZE_X (60.0f) 
 #define Player_SIZE_Y (60.0f) 
 #define PLAYER_SPEED (5.0f)
+#define AUTOMOVE_SPEED (5.5f)
 #define PLAYER_AIR_SPEED (3.5f)
 #define PLAYER_JUMP_POW	(5.0f)
 #define SHOT_SPEED (7.0)
@@ -27,6 +28,7 @@ void PlayerShot1R();
 void PlayerSlash();
 void  PlayerJump();
 void PlayerShot1MoveL();
+void PlayerAutoMove();
 int g_playerSpeed = PLAYER_SPEED;
 
 //\‘¢‘Ì‚ðŽÀÛ‚Ì•Ï”‚Å
@@ -131,24 +133,23 @@ void TickPlayer()
 	// g_player.m_animCnt = (g_player.m_animCnt + 1) % 40;
 
 
-
 	// d—Íˆ—
 	g_player.m_jumpPow -= GRAVITY;
 	g_player.m_pos.y -= g_player.m_jumpPow;
 
 	// ‰¼
-	if (g_player.m_pos.y >= WINDOW_SIZE_Y)
+	/*if (g_player.m_pos.y >= WINDOW_SIZE_Y)
 	{
 		g_player.m_pos.y = WINDOW_SIZE_Y;
 		SetLandPlayer();
 	}
-	g_player.m_animCnt = (g_player.m_animCnt + 1) % 40;
+	g_player.m_animCnt = (g_player.m_animCnt + 1) % 40;*/
 	
 	PlayerShot1L();
 	PlayerShot1R();
 	PlayerShot2();
-	PlayerSlash();
-	
+	//PlayerSlash();
+	//PlayerAutoMove();
 }
 	
 
@@ -464,6 +465,10 @@ void WaitExec()
 }
 
 
+void PlayerAutoMove()
+{
+	g_player.m_pos.x += AUTOMOVE_SPEED;
+}
 
 int GetWorldOffsetX()
 {

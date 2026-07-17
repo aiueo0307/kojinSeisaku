@@ -1,0 +1,3 @@
+﻿  background.cpp
+C:\Users\2409418\Desktop\kojinSeisaku\RunGame\src\game\background.cpp(44,47): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  RunGame.vcxproj -> C:\Users\2409418\Desktop\kojinSeisaku\RunGame\x64\Debug\RunGame.exe
